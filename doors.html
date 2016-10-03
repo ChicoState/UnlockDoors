@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Demonstrating JavaScript</title>
+    <!-- BOOTSTRAP (style only)-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script lang="javascript">
+      /**
+       * This function enables the right door button and also updates the
+       * Left door's status. Add a statement to also write to the console
+       * that the left door is opened.
+      **/
+      function openLeftDoor() {
+        document.getElementById("leftDoorStatus").innerHTML = "Open";
+        document.getElementById("rightDoor").removeAttribute("disabled");
+      }
+      /**
+       * This function enables the reset door button and also updates the
+       * Right door's status. Add a statement to also write to the console
+       * that the right door is opened.
+      **/
+      // Add function here for opening RIGHT door...
+
+
+      /**
+       * This function should disable both the right door button and the reset
+       * doors buttons. It should also reset the status of both left and right
+       * doors so they don't say they're open.
+      **/
+      function reset(){
+        document.getElementById("rightDoor").setAttribute("disabled", "");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4">
+          <button id="leftDoor" type="button" class="btn btn-primary"
+                  onclick="openLeftDoor();">
+            Open Left Door
+          </button>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Left Door</h3>
+            </div>
+            <div class="panel-body" id="leftDoorStatus">
+              &nbsp;
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 offset-sm-2">
+          <button id="rightDoor" type="button" class="btn btn-primary"
+                  onclick="openRightDoor();" disabled>
+            Open Right Door
+          </button>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Right Door</h3>
+            </div>
+            <div class="panel-body" id="rightDoorStatus">
+              &nbsp;
+            </div>
+          </div>
+        </div>
+      </div><!-- end row /-->
+      <div class="row">
+        <div class="col-sm-2">
+          <button id="resetDoors" type="button" class="btn btn-danger"
+                  onclick="reset();" disabled>
+            Reset Doors
+          </button>
+        </div>
+      </div>
+  </body>
+</html>
